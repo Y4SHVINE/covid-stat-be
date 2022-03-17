@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9485D4F4-9E94-4058-A11B-40BD0511E99D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{C7816907-144D-4EB4-B645-3E7E03BD4835}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{6965B827-25B1-4990-9654-6061FD7F1DC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{8FB31CA6-BF37-45DA-B09C-24DE15037E0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{0EBA756A-3E01-49F4-A192-C8B805685C21}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7873047B-1B2D-40D8-AEBE-587D2E3C201B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{346415FF-9233-459C-AE00-06ACFE985BC1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Boilerplate.ruleset = Boilerplate.ruleset
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidStat.Api", "src\CovidStat.Api\CovidStat.Api.csproj", "{7170C6CB-A879-4648-A249-8410D4EC70B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidStat.Infrastructure", "src\CovidStat.Infrastructure\CovidStat.Infrastructure.csproj", "{54F15E40-9F5D-4EC8-9909-E952CCA4259F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidStat.Domain.Core", "src\CovidStat.Domain.Core\CovidStat.Domain.Core.csproj", "{589B009E-C87D-46CF-9A90-DD42979BF818}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidStat.Domain", "src\CovidStat.Domain\CovidStat.Domain.csproj", "{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidStat.Application", "src\CovidStat.Application\CovidStat.Application.csproj", "{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7873047B-1B2D-40D8-AEBE-587D2E3C201B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7873047B-1B2D-40D8-AEBE-587D2E3C201B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7873047B-1B2D-40D8-AEBE-587D2E3C201B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7873047B-1B2D-40D8-AEBE-587D2E3C201B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7170C6CB-A879-4648-A249-8410D4EC70B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7170C6CB-A879-4648-A249-8410D4EC70B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7170C6CB-A879-4648-A249-8410D4EC70B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7170C6CB-A879-4648-A249-8410D4EC70B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54F15E40-9F5D-4EC8-9909-E952CCA4259F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F15E40-9F5D-4EC8-9909-E952CCA4259F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F15E40-9F5D-4EC8-9909-E952CCA4259F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F15E40-9F5D-4EC8-9909-E952CCA4259F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589B009E-C87D-46CF-9A90-DD42979BF818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589B009E-C87D-46CF-9A90-DD42979BF818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589B009E-C87D-46CF-9A90-DD42979BF818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589B009E-C87D-46CF-9A90-DD42979BF818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7816907-144D-4EB4-B645-3E7E03BD4835} = {9485D4F4-9E94-4058-A11B-40BD0511E99D}
+		{6965B827-25B1-4990-9654-6061FD7F1DC0} = {9485D4F4-9E94-4058-A11B-40BD0511E99D}
+		{8FB31CA6-BF37-45DA-B09C-24DE15037E0C} = {9485D4F4-9E94-4058-A11B-40BD0511E99D}
+		{0EBA756A-3E01-49F4-A192-C8B805685C21} = {9485D4F4-9E94-4058-A11B-40BD0511E99D}
+		{7873047B-1B2D-40D8-AEBE-587D2E3C201B} = {C7816907-144D-4EB4-B645-3E7E03BD4835}
+		{7170C6CB-A879-4648-A249-8410D4EC70B1} = {C7816907-144D-4EB4-B645-3E7E03BD4835}
+		{54F15E40-9F5D-4EC8-9909-E952CCA4259F} = {0EBA756A-3E01-49F4-A192-C8B805685C21}
+		{589B009E-C87D-46CF-9A90-DD42979BF818} = {8FB31CA6-BF37-45DA-B09C-24DE15037E0C}
+		{1FE5A51E-BA90-4AA9-AC2E-9E32AAA7E0D8} = {8FB31CA6-BF37-45DA-B09C-24DE15037E0C}
+		{CCBB92F0-815B-4C50-8FFF-6FAE62C3CF06} = {6965B827-25B1-4990-9654-6061FD7F1DC0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {541B563F-712B-4BF0-851D-756E0B417E4C}
+	EndGlobalSection
+EndGlobal
