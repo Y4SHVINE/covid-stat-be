@@ -47,7 +47,7 @@ namespace CovidStat.Application.Services
         {
             filter ??= new GetProfilesFilter();
             var profiles = _profileRepository
-                .GetAll()
+                .GetAllWithSubTables()
                 .WhereIf(!string.IsNullOrEmpty(filter.NIC), x => EF.Functions.Like(x.NIC, $"%{filter.NIC}%"));
 
             return await _mapper.ProjectTo<GetProfileDto>(profiles).ToPaginatedListAsync(filter.Page, filter.PageSize);
@@ -84,7 +84,16 @@ namespace CovidStat.Application.Services
             originalProfile.DOB = updatedProfile.DOB;
             originalProfile.Gender = updatedProfile.Gender;
             originalProfile.MartialStatus = updatedProfile.MartialStatus;
+            originalProfile.Location = updatedProfile.Location;
             originalProfile.PhoneNumber = updatedProfile.PhoneNumber;
+
+            if (updatedProfile.ChronicDiseases != null && updatedProfile.ChronicDiseases.Count > 0)
+            {
+                originalProfile.ChronicDiseases = updatedProfile.ChronicDiseases.Select(x => new ChronicDisease()
+                {
+                    Disease = x.Disease
+                }).ToList();
+            }
 
             _profileRepository.Update(originalProfile);
             await _profileRepository.SaveChangesAsync();

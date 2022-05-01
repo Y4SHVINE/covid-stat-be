@@ -7,6 +7,7 @@ namespace CovidStat.Domain.Repositories
 {
     public interface IProfileRepository : IRepository<UserProfile>
     {
+        IQueryable<UserProfile> GetAllWithSubTables();
         Task<UserProfile> GetByNic(string nic);
         void DeleteByNic(string nic);
     }

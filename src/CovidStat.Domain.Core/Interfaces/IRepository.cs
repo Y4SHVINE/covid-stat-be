@@ -11,6 +11,8 @@ namespace CovidStat.Domain.Core.Interfaces
 
         Task<TEntity> GetById(Guid id);
 
+        Task<TEntity> GetByIdWithTracking(Guid id);
+
         TEntity Create(TEntity entity);
 
         TEntity Update(TEntity entity);

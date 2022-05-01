@@ -22,6 +22,7 @@ namespace CovidStat.Domain.Entities
         public DateTime DOB { get; set; }
         public string Gender { get; set; }
         public string MartialStatus { get; set; }
+        public string Location { get; set; }
 
         public virtual List<ChronicDisease> ChronicDiseases { get; set; }
         public virtual List<Travel> Travels { get; set; }

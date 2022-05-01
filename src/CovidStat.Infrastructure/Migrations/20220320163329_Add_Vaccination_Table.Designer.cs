@@ -3,6 +3,7 @@ using System;
 using CovidStat.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CovidStat.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220320163329_Add_Vaccination_Table")]
+    partial class Add_Vaccination_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace CovidStat.Infrastructure.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("ChronicDiseases", (string)null);
+                    b.ToTable("ChronicDiseases");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.Hero", b =>
@@ -79,7 +81,7 @@ namespace CovidStat.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Heroes", (string)null);
+                    b.ToTable("Heroes");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.SideEffect", b =>
@@ -104,7 +106,7 @@ namespace CovidStat.Infrastructure.Migrations
 
                     b.HasIndex("VaccinationId2");
 
-                    b.ToTable("SideEffects", (string)null);
+                    b.ToTable("SideEffects");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.Travel", b =>
@@ -135,7 +137,7 @@ namespace CovidStat.Infrastructure.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("Travels", (string)null);
+                    b.ToTable("Travels");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.User", b =>
@@ -166,7 +168,7 @@ namespace CovidStat.Infrastructure.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.UserProfile", b =>
@@ -189,9 +191,6 @@ namespace CovidStat.Infrastructure.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("text");
 
-                    b.Property<string>("Location")
-                        .HasColumnType("text");
-
                     b.Property<string>("MartialStatus")
                         .HasColumnType("text");
 
@@ -212,7 +211,7 @@ namespace CovidStat.Infrastructure.Migrations
                     b.HasIndex("NIC")
                         .IsUnique();
 
-                    b.ToTable("UserProfiles", (string)null);
+                    b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.Vaccination", b =>
@@ -245,7 +244,10 @@ namespace CovidStat.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vaccinations", (string)null);
+                    b.HasIndex("NIC")
+                        .IsUnique();
+
+                    b.ToTable("Vaccinations");
                 });
 
             modelBuilder.Entity("CovidStat.Domain.Entities.ChronicDisease", b =>

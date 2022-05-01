@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CovidStat.Application.DTOs.ChronicDisease;
 using CovidStat.Application.DTOs.Travel;
 using CovidStat.Domain.Entities;
 
@@ -18,8 +19,9 @@ namespace CovidStat.Application.DTOs.Profile
         public DateTime DOB { get; set; }
         public string Gender { get; set; }
         public string MartialStatus { get; set; }
+        public string Location { get; set; }
 
-        //public List<ChronicDisease> ChronicDiseases { get; set; }
+        public List<GetChronicDiseaseDto> ChronicDiseases { get; set; }
         public List<GetTravelDto> Travels { get; set; }
     }
 }

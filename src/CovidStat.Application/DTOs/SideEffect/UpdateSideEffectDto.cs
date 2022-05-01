@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CovidStat.Application.Helpers
+namespace CovidStat.Application.DTOs.SideEffect
 {
-    public static class CommonHelper
+    public class UpdateSideEffectDto : CreateSideEffect
     {
     }
 }

@@ -62,7 +62,7 @@ namespace CovidStat.Api.Controllers
         public async Task<ActionResult<GetProfileDto>> Create([FromBody] CreateProfileDto dto)
         {
             var newProfile = await _profileService.CreateProfile(dto);
-            return CreatedAtAction(nameof(GetProfileById), new { id = newProfile.Id }, newProfile);
+            return CreatedAtAction(nameof(GetProfileById), new { nic = newProfile.NIC }, newProfile);
 
         }
 

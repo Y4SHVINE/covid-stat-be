@@ -16,9 +16,20 @@ namespace CovidStat.Infrastructure.Repositories
             _context = context;
         }
 
+        public IQueryable<UserProfile> GetAllWithSubTables()
+        {
+            return _context.UserProfiles
+                .Include(c => c.ChronicDiseases)
+                .Include(t => t.Travels)
+                .AsNoTracking();
+        }
+
         public Task<UserProfile> GetByNic(string nic)
         {
-            return _context.UserProfiles.FirstOrDefaultAsync(a => a.NIC == nic);
+            return _context.UserProfiles
+                .Include(c => c.ChronicDiseases)
+                .Include(t => t.Travels)
+                .FirstOrDefaultAsync(a => a.NIC == nic);
         }
 
         public void DeleteByNic(string nic)

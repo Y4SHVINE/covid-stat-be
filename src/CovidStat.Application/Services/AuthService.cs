@@ -36,7 +36,7 @@ namespace CovidStat.Application.Services
                 new Claim(ClaimTypes.Role, user.Role)
             });
 
-            var expDate = DateTime.UtcNow.AddHours(1);
+            var expDate = DateTime.UtcNow.AddHours(24);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
