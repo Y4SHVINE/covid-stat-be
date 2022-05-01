@@ -5,13 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CovidStat.Infrastructure.Configuration
 {
-    public class UserProfileConfiguration : IEntityTypeConfiguration<UserProfile>
+    public class VaccinationConfiguration : IEntityTypeConfiguration<Vaccination>
     {
-        public void Configure(EntityTypeBuilder<UserProfile> builder)
+        public void Configure(EntityTypeBuilder<Vaccination> builder)
         {
             builder.Property(x => x.NIC).IsRequired().HasMaxLength(12);
-            builder.HasIndex(x => x.NIC).IsUnique();
-            builder.HasIndex(x => x.Email).IsUnique();
         }
     }
 }

@@ -52,9 +52,13 @@ namespace CovidStat.Api
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<ITravelRepository, TravelRepository>();
+            services.AddScoped<IVaccinationRepository, VaccinationRepository>();
+            services.AddScoped<ISideEffectRepository, SideEffectRepository>();
 
             services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IVaccinationService, VaccinationService>();
+            services.AddScoped<IStatisticsService, StatisticsService>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
@@ -102,7 +106,7 @@ namespace CovidStat.Api
                     };
                 });
 
-            string corsDomains = "http://localhost:4200";
+            string corsDomains = "http://localhost:4200,https://yashvinecovidstat.netlify.app,http://yashvinecovidstat.netlify.app,https://tsdcovidstat.netlify.app,http://tsdcovidstat.netlify.app,http://y4shvine.github.io,https://y4shvine.github.io";
             string[] domains = corsDomains.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             services.AddCors(o => o.AddPolicy("AppCORSPolicy", builder =>
             {

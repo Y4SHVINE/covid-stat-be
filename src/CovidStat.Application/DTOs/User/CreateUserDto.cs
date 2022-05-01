@@ -9,7 +9,7 @@ namespace CovidStat.Application.DTOs.User
         public string Email { get; set; }
 
         [Required(ErrorMessage = "NIC is required")]
-        [StringLength(maximumLength: 11, ErrorMessage = "Maximum length is 11")]
+        [StringLength(maximumLength: 12, ErrorMessage = "Maximum length is 12")]
         public string NIC { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required.")]
